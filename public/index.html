@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CA1 Florian's Krak</title>
+</head>
+
+<body>
+  <!--
+    This div is added to remove the flicker that comes from bootstrap being loaded
+    first in index.js
+    REMEMBER to set display to "block" in index.js, otherwise you will not see anything
+  -->
+  <div id="all-content" style="display: none;">
+    <ul id="menu" class="header">
+      <li><a href="" id="search">Søg</a></li>
+      <li><a href="" id="home">Forside</a></li>
+      <li><a href="" id="admin">Admin side</a></li>
+      <li><a href="" id="ex3">Opret bruger</a></li>
+    </ul>
+
+    <div class="content">
+
+      <!-- HOMEPAGE -->
+      <div id="home_html" style="display:none;">
+        <h3>Velkommen til forsiden for Florians krak</h3>
+          
+        
+        <table id="persons" class="table table-striped">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone</th>
+                <th>Streeet</th>
+                <th>Zip</th>
+                <th>City</th>
+              </tr>
+            </thead>
+              <tbody id="tablerows">
+               
+              </tbody>
+          </table>
+
+        
+      </div>
+      <!---->
+
+
+
+      <!-- ADMIN PAGE -->
+      <div id="admin_html" style="display:none;">
+        <h3>Velkommen tilbage, admin</h3>
+        <p id="ex2p">Du har desværre ikke nogen funktion i dette projekt.</p>
+      </div>
+      <!---->
+
+
+      <!-- CREATE PAGE -->
+      <div id="ex3_html" style="display:none;">
+        <h3>Velkommen tilbage, admin</h3>
+        <p>Du har desværre ikke nogen funktion i dette projekt.</p>
+
+        <div class="row" style="min-height: 5em;">
+      <div class=" col-md-8 pre-scrollable" style="background-color: lightgrey;">
+          <h5>All Users</h5>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Age</th>
+                <th>Name
+                <th>
+                <th>Gender</th>
+                <th>Email </th>
+            </thead>
+            <tbody id="allUserRows">
+            <tbody>
+          </table>
+        </div>
+        <div class="col-md-4" style="background-color: powderblue;">
+          <h5>Find User</h5>
+        </div>
+      </div>
+      <div class="row" style="min-height: 5em;">
+        <div class="col-md-4" style="background-color: powderblue;">
+          <h5>Add User</h5>
+        </div>
+        <div class="col-md-4" style="background-color: lightgrey;">
+          <h5>Edit User</h5>
+        </div>
+        <div class="col-md-4" style="background-color: powderblue;">
+          <h5>Delete User</h5>
+        </div>
+      </div>
+      <!-- </div> -->
+      <!-- End of HTML for exercise-3 -->
+
+      <!---- HTML for the About page -->
+
+    </div>
+
+    <div id="search_html" style="display:none;">
+      <h3>Søgemaskine</h3>
+      <p>Du kan her finde personer ved at indstaste vedkommendes informationer.</p>
+    
+
+      <div id="searchId">
+        <label for= "search" >Search by ID</label>
+        <input type = "text" id="searchBarID">
+        <button type= "button" >Search</button>
+        <p id="searchIdOutput"></p>
+      </div>
+     
+      <div id="searchHobby">
+        <label for= "search" >Search by Hobby</label>
+        <input type= "text" id="searchBarHobby">
+        <button type= "button" >Search</button>
+        <p id= "searchHobbyOutput"></p>
+      </div>
+
+      <div id= "searchPhoneNr">
+        <label for="search" >Search by Phone#</label>
+        <input type = "text" id="searchBarPhone">
+        <button type= "button">Search </button>
+        <p id="searchPhoneOutput"></p>
+      </div>
+
+      <div id= "searchPhoneZip">
+        <label for="search" >Search by ZipCode</label>
+        <input type = "text" id="searchBarZip">
+        <button type= "button">Search </button>
+        <p id="searchZipOutput"></p>
+      </div>
+
+      <div id= "searchPeoplePrHobby">
+        <label for="search" >Find number of people by Hobby</label>
+        <input type = "text" id="searchBarPhone">
+        <button type= "button">Search </button>
+        <p id="searchPrHobbyOutput"></p>
+      </div>
+
+
+    </div>
+    <!-- End of HTML for ABOUT Page -->
+
+
+    <!--End of all content -->
+  </div>
+
+  <!-- #################################################################-->
+  <!-- IMPORTANT  DO NOT IMPORT ANY JavaScript in this file by YOURSELF -->
+  <!-- #################################################################-->
+
+</body>
+
+</html>
