@@ -6,19 +6,41 @@ import '@popperjs/core';
 
 document.getElementById("all-content").style.display = "block"
 
-/* 
-  Add your JavaScript for all exercises Below or in separate js-files, which you must the import above
+/* JS For Search page below */
+
+/*
+let searchIdBlock = document.getElementById("searchId")
+let searchHobbyBlock = document.getElementById("searchHobby")
+let searchPhoneBlock = document.getElementById("searchPhoneNr")
+let searchZipBlock = document.getElementById("searchZip")
+let searchPeopleHobbyBlock = document.getElementById("searchPeoplePrHobby")
 */
 
-/* JS For Exercise-1 below */
+document.getElementById("searchId").addEventListener('click',e=>{
+  e.preventDefault();
+  const node = e.target
+  const name = node.getAttribute("name")
+  const id = node.getAttribute("id")
+  switch(name){
+    case "search": getById(id); break;
+  }
+})
 
 
 
-/* JS For Exercise-2 below */
+/* JS For Home page below */
 
 
 
-/* JS For Exercise-3 below */
+
+
+/* JS For Admin page below */
+
+
+
+
+
+/* JS For Creation page below */
 
 
 
@@ -33,13 +55,13 @@ function getById(id){
 }
 
 
-function getAllPersons(){
+function getAllPersons(html_id){
     fetch(URL+"/all")
         .then(handleHttpErrors)
         .then(data =>
             {
                const allRows = data.all.map(p => getPersonTableRow(p))
-                document.getElementById("tablerows").innerHTML = allRows.join("");
+                document.getElementById(html_id).innerHTML = allRows.join("");
             })
     .catch(err =>{
         if(err.status){
@@ -78,12 +100,33 @@ function getCountWHobby(h){
     return fetch(URL + '/hobby/count' + h).then(result => httpErrorsHandler)
 }
 
-function addPerson(){
+function createPerson(){
+ 
 
 }
 
 function editPerson(){
-    
+     const id = document.getElementById("")
+
+  const personObject = {
+    id: id,
+    firstName: document.getElementById("firstName").value,
+    lastName: document.getElementById("lastName").value,
+    phone: document.getElementById("phone").value,
+    street: document.getElementById("street").value,
+    zip: document.getElementById("zip").value,
+    city: document.getElementById("city").value,
+  }
+
+  const options = makeOptions('PUT', personObject)
+
+  fetch(`${URL}/${id}`, options)
+  .then(handleHttpErrors)
+  .then(data =>
+    {
+      getAllPersons()
+    })
+    .catch(errorHandling)
 }
 
 
@@ -92,7 +135,7 @@ function editPerson(){
 
 /* Helper methods */
 
-function makeOptions(){
+function makeOptions(method, body){
 var opts = {
   method : method,
   headers: {
@@ -113,7 +156,15 @@ function handleHttpErrors(res){
   return res.json();
 }
 
-
+function errorHandling(err){
+  console.log(e)
+  if(err.status){
+    err.fullError.then(e => console.log(e.message))
+  }
+  else{
+    console.log("Network erro")
+  }
+}
 
 
 
